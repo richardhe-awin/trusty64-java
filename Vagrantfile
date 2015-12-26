@@ -46,8 +46,8 @@ Vagrant.configure(2) do |config|
    config.vm.provider "virtualbox" do |vb|
      # Display the VirtualBox GUI when booting the machine
      vb.gui = false
-     vb.name = "trusty64_home"  
-     vb.customize ['modifyvm', :id, '--memory', '512', '--cpus', '1', '--ioapic', 'on']
+     vb.name = "trusty64-java"  
+     vb.customize ['modifyvm', :id, '--memory', '2048', '--cpus', '4', '--ioapic', 'on']
    end
   #
   # View the documentation for the provider you are using for more
