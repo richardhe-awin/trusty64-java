@@ -37,7 +37,6 @@ Vagrant.configure(2) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  # config.vm.synced_folder "../data", "/vagrant_data"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -78,5 +77,10 @@ Vagrant.configure(2) do |config|
      update-java-alternatives -s java-8-oracle
      sudo apt-get install maven -y
      sudo apt-get install zsh -y
+     rm -f /tmp/elasticsearch-1.7.4.deb
+     wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.4.deb -P /tmp
+     sudo dpkg -i /tmp/elasticsearch-1.7.4.deb
+     sudo /usr/share/elasticsearch/bin/plugin install lmenezes/elasticsearch-kopf
+	
    SHELL
 end
